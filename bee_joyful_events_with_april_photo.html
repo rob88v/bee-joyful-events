@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bee Joyful Events | Joyful Celebrations, Thoughtfully Planned</title>
+  <meta name="description" content="Thoughtful, organized, and joy-filled event and wedding planning by April. Serving Fort Myers, Southwest Florida, and beyond." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caudex:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --cream: #FBF8F2;
+      --gold: #DDAA38;
+      --deep-gold: #B88214;
+      --honey-soft: #F4E8D3;
+      --charcoal: #2D2926;
+      --muted: #5C554E;
+      --white: #FFFFFF;
+      --border: rgba(45, 41, 38, 0.12);
+      --serif: 'Caudex', Georgia, serif;
+      --display: 'Cormorant Garamond', Georgia, serif;
+      --sans: 'Montserrat', sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--cream);
+      color: var(--charcoal);
+      font-family: var(--sans);
+      line-height: 1.65;
+      font-weight: 300;
+    }
+    .container { width: min(100% - 48px, 1180px); margin: 0 auto; }
+
+    .announcement-bar {
+      background: var(--charcoal);
+      color: var(--cream);
+      text-align: center;
+      padding: 10px 16px;
+      font-size: .82rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .announcement-bar span { color: var(--gold); font-weight: 700; }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(251,248,242,.94);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-wrap {
+      height: 86px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--charcoal);
+      text-decoration: none;
+    }
+    .brand-logo svg { width: 44px; height: 44px; fill: var(--deep-gold); }
+    .brand-title strong {
+      display: block;
+      font-family: var(--serif);
+      font-size: 1.45rem;
+      line-height: 1.1;
+    }
+    .brand-title small {
+      display: block;
+      font-size: .7rem;
+      text-transform: uppercase;
+      letter-spacing: .18em;
+      color: var(--deep-gold);
+      font-weight: 700;
+    }
+    nav { display: flex; align-items: center; gap: 24px; }
+    nav a {
+      color: var(--charcoal);
+      text-decoration: none;
+      font-size: .88rem;
+      font-weight: 600;
+      letter-spacing: .04em;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      border-radius: 999px;
+      padding: 12px 24px;
+      text-decoration: none;
+      font-size: .82rem;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      font-weight: 700;
+      border: 1px solid var(--charcoal);
+      transition: .25s ease;
+    }
+    .btn-dark { background: var(--charcoal); color: var(--cream) !important; }
+    .btn-dark:hover { background: var(--deep-gold); border-color: var(--deep-gold); transform: translateY(-2px); }
+    .btn-outline { color: var(--charcoal); background: transparent; }
+    .btn-outline:hover { background: var(--charcoal); color: var(--cream); transform: translateY(-2px); }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 92px 0 76px;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: -20% -10% auto auto;
+      width: 560px;
+      height: 560px;
+      opacity: .08;
+      background:
+        radial-gradient(circle at 30% 30%, var(--deep-gold) 0 3px, transparent 4px),
+        linear-gradient(30deg, transparent 48%, var(--deep-gold) 49% 51%, transparent 52%);
+      background-size: 52px 52px;
+      transform: rotate(8deg);
+    }
+    .hero-grid {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 56px;
+      align-items: center;
+    }
+    .kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--honey-soft);
+      color: var(--deep-gold);
+      border-radius: 999px;
+      padding: 7px 16px;
+      font-size: .78rem;
+      text-transform: uppercase;
+      letter-spacing: .14em;
+      font-weight: 800;
+      margin-bottom: 22px;
+    }
+    h1, h2, h3 { font-family: var(--serif); line-height: 1.15; }
+    h1 { font-size: clamp(2.8rem, 5.2vw, 4.6rem); margin-bottom: 24px; }
+    h1 em { font-family: var(--display); color: var(--deep-gold); font-weight: 400; }
+    .lead { font-size: 1.1rem; color: var(--muted); max-width: 590px; margin-bottom: 32px; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; }
+    .hero-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      padding: 42px 36px;
+      text-align: center;
+      box-shadow: 0 22px 50px rgba(45,41,38,.08);
+    }
+    .botanical-svg { width: min(100%, 250px); margin-bottom: 20px; color: var(--deep-gold); }
+    .quote { font-family: var(--display); font-size: 1.75rem; font-style: italic; line-height: 1.35; margin-bottom: 16px; }
+    .quote-author { color: var(--deep-gold); font-weight: 700; font-size: .78rem; letter-spacing: .16em; text-transform: uppercase; }
+
+    .features-strip {
+      background: rgba(244,232,211,.38);
+      border-block: 1px solid var(--border);
+      padding: 36px 0;
+    }
+    .features-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; text-align: center; }
+    .feature strong { display: block; font-family: var(--serif); font-size: 1.22rem; }
+    .feature span { color: var(--muted); font-size: .86rem; }
+
+    section { padding: 92px 0; }
+    .section-head { max-width: 760px; text-align: center; margin: 0 auto 50px; }
+    .section-head h2 { font-size: clamp(2.1rem, 3.4vw, 3rem); margin-bottom: 14px; }
+    .section-head p { color: var(--muted); font-size: 1.02rem; }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 62px;
+      align-items: center;
+    }
+
+    /* April photo card added under About Me */
+    .bio-visual-container {
+      position: relative;
+      border-radius: 210px 210px 28px 28px;
+      background:
+        linear-gradient(135deg, rgba(221,170,56,.26), rgba(244,232,211,.88)),
+        var(--honey-soft);
+      padding: 16px;
+      border: 1px solid rgba(184,130,20,.25);
+      box-shadow: 0 20px 48px rgba(45,41,38,.11);
+    }
+    .bio-visual-container::before,
+    .bio-visual-container::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(221,170,56,.22);
+      z-index: -1;
+    }
+    .bio-visual-container::before { width: 140px; height: 140px; left: -34px; top: 44px; }
+    .bio-visual-container::after { width: 190px; height: 190px; right: -45px; bottom: -38px; }
+    .bio-photo-frame {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      border-radius: 195px 195px 20px 20px;
+      background: var(--honey-soft);
+    }
+    .bio-photo-frame img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      object-position: 52% 30%;
+      filter: saturate(1.04) contrast(1.02);
+    }
+    .bio-photo-frame::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 55%, rgba(45,41,38,.23));
+      pointer-events: none;
+    }
+    .bio-badge {
+      position: absolute;
+      right: -18px;
+      bottom: -22px;
+      max-width: 210px;
+      border-radius: 18px;
+      padding: 16px 20px;
+      background: var(--charcoal);
+      color: var(--cream);
+      box-shadow: 0 16px 32px rgba(0,0,0,.2);
+      font-size: .86rem;
+      line-height: 1.35;
+    }
+    .bio-badge strong {
+      display: block;
+      color: var(--gold);
+      font-family: var(--serif);
+      font-size: 1.15rem;
+    }
+    .about-copy h2 { font-size: clamp(2rem, 3.2vw, 2.9rem); margin-bottom: 18px; }
+    .about-copy p { color: var(--muted); margin-bottom: 17px; font-size: 1rem; }
+    .about-values { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 28px; }
+    .value-box { background: var(--white); border: 1px solid var(--border); border-radius: 18px; padding: 20px; }
+    .value-box strong { display: block; font-family: var(--serif); font-size: 1.08rem; margin-bottom: 6px; }
+    .value-box p { font-size: .86rem; margin: 0; }
+
+    .packages-section { background: rgba(244,232,211,.25); border-block: 1px solid var(--border); }
+    .packages-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-bottom: 42px; }
+    .card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 34px 28px;
+      box-shadow: 0 16px 38px rgba(45,41,38,.055);
+    }
+    .card.featured { border: 2px solid var(--gold); background: linear-gradient(180deg, #fff, #fffdf8); }
+    .tag { color: var(--deep-gold); text-transform: uppercase; letter-spacing: .14em; font-size: .74rem; font-weight: 800; margin-bottom: 8px; }
+    .card h3 { font-size: 1.65rem; margin-bottom: 12px; }
+    .card p, .card li { color: var(--muted); font-size: .92rem; }
+    .price { border-top: 1px dashed var(--border); margin-top: 20px; padding-top: 18px; font-family: var(--serif); font-size: 2.05rem; font-weight: 700; }
+    .price span { font-family: var(--sans); font-size: .82rem; color: var(--muted); font-weight: 400; }
+    .consultation-card {
+      background: var(--charcoal);
+      color: var(--cream);
+      border-radius: 24px;
+      padding: 38px;
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      align-items: center;
+      gap: 28px;
+    }
+    .consultation-card h3 { color: var(--white); font-size: 1.85rem; margin-bottom: 8px; }
+    .consultation-card p { color: rgba(251,248,242,.78); }
+    .consult-price { font-family: var(--serif); color: var(--gold); font-size: 2.7rem; font-weight: 700; line-height: 1; margin-bottom: 14px; }
+
+    .party-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 24px; margin-bottom: 56px; }
+    .card ul { list-style: none; margin-top: 18px; display: grid; gap: 10px; }
+    .card li { position: relative; padding-left: 24px; }
+    .card li::before { content: "🐝"; position: absolute; left: 0; top: 0; }
+    .tier-prices { display: flex; gap: 14px; margin-top: 20px; }
+    .tier-box { flex: 1; background: var(--honey-soft); border-radius: 14px; padding: 16px; text-align: center; }
+    .tier-box strong { display: block; color: var(--deep-gold); font-family: var(--serif); font-size: 1.35rem; }
+    .tier-box span { color: var(--muted); font-size: .78rem; }
+    .addons-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+    .addon { text-align: center; }
+    .addon-icon { font-size: 1.7rem; margin-bottom: 8px; }
+    .addon h4 { font-family: var(--serif); font-size: 1.12rem; margin-bottom: 8px; }
+    .addon-price { color: var(--deep-gold); font-family: var(--serif); font-weight: 700; font-size: 1.08rem; margin-top: 12px; }
+
+    .process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+    .step-num { width: 42px; height: 42px; border-radius: 50%; background: var(--honey-soft); color: var(--deep-gold); display: grid; place-items: center; font-family: var(--serif); font-weight: 700; margin-bottom: 14px; }
+
+    .contact-section { background: var(--charcoal); color: var(--cream); }
+    .contact-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 56px; align-items: start; }
+    .contact-section h2 { color: var(--white); font-size: clamp(2rem, 3.2vw, 2.8rem); margin-bottom: 16px; }
+    .contact-section p { color: rgba(251,248,242,.78); margin-bottom: 22px; }
+    .prayer-banner { background: rgba(255,255,255,.08); border: 1px dashed rgba(221,170,56,.4); border-radius: 18px; padding: 20px; }
+    .prayer-banner strong { color: var(--gold); font-family: var(--serif); font-size: 1.08rem; }
+    .form-card { background: var(--white); color: var(--charcoal); border-radius: 24px; padding: 34px; box-shadow: 0 22px 50px rgba(0,0,0,.24); }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .form-group { display: flex; flex-direction: column; gap: 6px; }
+    .form-group.full { grid-column: span 2; }
+    label { font-size: .78rem; text-transform: uppercase; letter-spacing: .08em; font-weight: 800; }
+    input, select, textarea { border: 1px solid var(--border); border-radius: 12px; background: var(--cream); padding: 12px 14px; font: inherit; }
+    textarea { min-height: 112px; resize: vertical; }
+    button.btn { width: 100%; cursor: pointer; }
+
+    footer { background: #1f1c1a; color: rgba(251,248,242,.62); padding: 36px 0; font-size: .84rem; }
+    .footer-wrap { display: flex; justify-content: space-between; gap: 18px; flex-wrap: wrap; }
+
+    @media (max-width: 980px) {
+      nav { display: none; }
+      .hero-grid, .about-grid, .consultation-card, .party-grid, .contact-grid { grid-template-columns: 1fr; }
+      .packages-grid, .features-grid, .process-grid, .addons-grid { grid-template-columns: repeat(2, 1fr); }
+      .bio-visual-container { max-width: 520px; margin: 0 auto; }
+    }
+    @media (max-width: 640px) {
+      .container { width: min(100% - 32px, 1180px); }
+      .hero { padding-top: 62px; }
+      .features-grid, .packages-grid, .process-grid, .addons-grid, .about-values, .form-grid { grid-template-columns: 1fr; }
+      .form-group.full { grid-column: span 1; }
+      .tier-prices { flex-direction: column; }
+      .bio-badge { right: 8px; bottom: 8px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="announcement-bar">Joyful Celebrations, Thoughtfully Planned &bull; <span>Now Booking 2026 &amp; 2027</span> &bull; Fort Myers &amp; Southwest Florida</div>
+
+  <header>
+    <div class="container nav-wrap">
+      <a href="#" class="brand-logo">
+        <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M20 5 C15 5 11 9 11 14 C11 17 13 19.5 15.5 21 C14.5 23 14 25.5 14 28 C14 34 18 36 20 37 C22 36 26 34 26 28 C26 25.5 25.5 23 24.5 21 C27 19.5 29 17 29 14 C29 9 25 5 20 5 Z"/><path d="M12 18 C8 15 3 17 2 22 C1 26 5 29 11 25 Z" opacity=".72"/><path d="M28 18 C32 15 37 17 38 22 C39 26 35 29 29 25 Z" opacity=".72"/></svg>
+        <span class="brand-title"><strong>Bee Joyful Events</strong><small>Thoughtfully Planned</small></span>
+      </a>
+      <nav>
+        <a href="#about">About April</a>
+        <a href="#weddings">Weddings</a>
+        <a href="#parties">Parties</a>
+        <a href="#addons">Add-Ons</a>
+        <a href="#process">How It Works</a>
+        <a href="#contact" class="btn btn-dark">Plan Your Event</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="kicker">🐝 Event Planning With Heart</div>
+          <h1>Joyful celebrations, <em>thoughtfully</em> planned.</h1>
+          <p class="lead">Bee Joyful Events brings your special moments to life with organized planning, calm execution, and a personal touch from start to finish.</p>
+          <div class="hero-actions">
+            <a href="#contact" class="btn btn-dark">Start Planning Your Event</a>
+            <a href="#weddings" class="btn btn-outline">View Packages</a>
+          </div>
+        </div>
+        <div class="hero-card">
+          <svg class="botanical-svg" viewBox="0 0 300 120" fill="none" stroke="currentColor"><path d="M20,60 Q80,10 150,60 T280,60" stroke="#B88214" stroke-width="1.5"/><path d="M80,35 C70,20 90,15 100,30 C110,15 130,20 120,35 C110,50 90,50 80,35 Z" fill="#DDAA38" opacity=".3" stroke="#B88214"/><path d="M180,45 C170,30 190,25 200,40 C210,25 230,30 220,45 C210,60 190,60 180,45 Z" fill="#DDAA38" opacity=".3" stroke="#B88214"/><circle cx="150" cy="60" r="14" fill="#B88214"/><circle cx="150" cy="60" r="18" stroke="#DDAA38" stroke-dasharray="3,3"/></svg>
+          <div class="quote">“Every celebration has a heartbeat. We take care of every detail so you can simply be present in the joy.”</div>
+          <div class="quote-author">— April, Founder &amp; Lead Planner</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="features-strip">
+      <div class="container features-grid">
+        <div class="feature"><strong>Personalized</strong><span>Tailored to your style and story</span></div>
+        <div class="feature"><strong>Organized</strong><span>Detailed timelines and logistics</span></div>
+        <div class="feature"><strong>Calm &amp; Clear</strong><span>Stress-free communication</span></div>
+        <div class="feature"><strong>Joy-Centered</strong><span>Designed so you can enjoy the day</span></div>
+      </div>
+    </div>
+
+    <section id="about">
+      <div class="container about-grid">
+        <div class="bio-visual-container">
+          <div class="bio-photo-frame">
+            <img src="April.jpg" alt="April, founder and lead planner of Bee Joyful Events" />
+          </div>
+          <div class="bio-badge"><strong>Meet April</strong>Founder &amp; Lead Planner of Bee Joyful Events.</div>
+        </div>
+
+        <div class="about-copy">
+          <div class="kicker">Meet the Planner</div>
+          <h2>Planning with care, creativity, and calm confidence.</h2>
+          <p>Hi, I’m April — creator and lead planner of <strong>Bee Joyful Events</strong>. For more than 10 years, I’ve had the joy of helping people bring their event visions to life.</p>
+          <p>My planning style is rooted in communication, efficiency, creativity, and genuine care. Whether you are planning an intimate celebration, milestone event, or once-in-a-lifetime wedding, my goal is to make the entire process feel organized, personal, and joyful.</p>
+          <p>Born and raised in Fort Lauderdale, Florida, I have also spent over 16 years working in education — a background that strengthened my ability to listen deeply, manage complex moving parts, solve unexpected problems, and guide people with patience.</p>
+          <p>Outside of planning events, I’m happily married to the love of my life, sharing our home with our two dogs, Winston and Basil. My family, friends, and two nephews are a huge part of my world — and they inspire the heart behind everything we do.</p>
+          <div class="about-values">
+            <div class="value-box"><strong>✨ 16+ Years in Education</strong><p>Exceptional patience, clear organization, and structured guidance.</p></div>
+            <div class="value-box"><strong>💛 Heart for Celebrations</strong><p>Treating your milestone with the same love and detail as our own.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="packages-section" id="weddings">
+      <div class="container">
+        <div class="section-head"><div class="kicker">Wedding Services</div><h2>Wedding Planning &amp; Coordination</h2><p>From full-service guidance to seamless day-of execution, we walk with you every step of the way.</p></div>
+        <div class="packages-grid">
+          <article class="card featured"><div class="tag">Full Party Planning</div><h3>All the Buzz</h3><p>For clients unsure where to start. We become “besties” and walk you through every step — from decor and budgeting to timeline coordination.</p><div class="price">$3,000 <span>/ full wedding</span></div><a href="#contact" class="btn btn-dark">Inquire Now</a></article>
+          <article class="card"><div class="tag">Partial Planning</div><h3>Sweet Spot</h3><p>For clients who have an idea of what they want, but need assistance with details, timelines, shopping companionship, and day-of management.</p><div class="price">$1,800 <span>/ partial planning</span></div><a href="#contact" class="btn btn-outline">Inquire Now</a></article>
+          <article class="card"><div class="tag">Month-of Coordination</div><h3>Honeycomb</h3><p>Perfect for clients who have everything planned but want a dedicated contact for execution, with unlimited communication during the month prior.</p><div class="price">$900 <span>/ month-of</span></div><a href="#contact" class="btn btn-outline">Inquire Now</a></article>
+        </div>
+        <div class="consultation-card">
+          <div><div class="kicker">Let's Connect</div><h3>Event Planning Consultation</h3><p>We’ll discuss your ideas, budget, and vision to create a tailored roadmap so you can start your planning journey with confidence.</p></div>
+          <div><div class="consult-price">FREE</div><a href="#contact" class="btn btn-dark">Book Free Consultation</a></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="parties">
+      <div class="container">
+        <div class="section-head"><div class="kicker">Parties &amp; Milestones</div><h2>Showers, Birthdays &amp; Special Events</h2><p>Thoughtfully coordinated social celebrations so you can celebrate without stress.</p></div>
+        <div class="party-grid">
+          <article class="card"><div class="tag">All-In-One Party Planning</div><h3>Sweet As Honey Package</h3><p>Complete celebration management from theme creation to day-of oversight:</p><ul><li><strong>Initial Consultation:</strong> Theme, budget, and guest list roadmap</li><li><strong>Venue Setup &amp; Décor:</strong> Balloons, table settings, backdrop, banners, centerpieces</li><li><strong>Theme Planning:</strong> Coordinated color palette, cake, and favors</li><li><strong>Vendor Coordination:</strong> Caterers, bakers, entertainment, and photographers</li><li><strong>Timeline Management:</strong> Activities, games, and special moments</li><li><strong>Day-of Coordination:</strong> Vendors and last-minute needs</li></ul><div class="price">$300 <span>/ event</span></div></article>
+          <article class="card"><div class="tag">Setup &amp; Teardown</div><h3>The Worker Bee Package</h3><p>Perfect for clients who have everything planned out. You buy the goods, and we can shop, set up, and tear down to make your vision come to life.</p><div class="tier-prices"><div class="tier-box"><strong>$75</strong><span>3 Hours of Setup</span></div><div class="tier-box"><strong>$120</strong><span>4 Hours of Setup</span></div></div></article>
+        </div>
+
+        <div id="addons" class="section-head" style="margin-bottom: 30px;"><div class="kicker">Enhance Your Event</div><h2>Add-On Services</h2></div>
+        <div class="addons-grid">
+          <article class="card addon"><div class="addon-icon">💌</div><h4>Buzzing Invites</h4><p>Custom-designed invitations, printing, or digital invite management.</p><div class="addon-price">$30</div></article>
+          <article class="card addon"><div class="addon-icon">🍯</div><h4>Honeycomb Treats</h4><p>Themed giveaways or goodie bags for each guest.</p><div class="addon-price">$5 – $10 / guest</div></article>
+          <article class="card addon"><div class="addon-icon">🎈</div><h4>Buzz-tivities &amp; Games</h4><p>Organized kids’ games, arts and crafts, inflatables, and scavenger hunts.</p><div class="addon-price">$100 – $200</div></article>
+          <article class="card addon"><div class="addon-icon">🧹</div><h4>Hive Cleanup Crew</h4><p>Post-party breakdown, trash removal, and venue reset.</p><div class="addon-price">$50 – $100</div></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="process" class="packages-section">
+      <div class="container">
+        <div class="section-head"><div class="kicker">The Experience</div><h2>How We Work Together</h2><p>A simple, structured process designed to bring peace of mind from day one.</p></div>
+        <div class="process-grid">
+          <article class="card"><div class="step-num">1</div><h3>Connect</h3><p>We start with a free consultation to understand your vision and celebration goals.</p></article>
+          <article class="card"><div class="step-num">2</div><h3>Plan</h3><p>We build a personalized checklist, vendor roadmap, and timeline.</p></article>
+          <article class="card"><div class="step-num">3</div><h3>Coordinate</h3><p>We communicate with vendors and organize the moving details.</p></article>
+          <article class="card"><div class="step-num">4</div><h3>Celebrate</h3><p>You relax and enjoy every memory while we oversee the day.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+      <div class="container contact-grid">
+        <div>
+          <div class="kicker">Let's Get Started</div>
+          <h2>Ready to plan something joyful?</h2>
+          <p>Tell us about your upcoming event, preferred date, and where you are in the planning process. We would love to be part of your story.</p>
+          <p>📍 Fort Myers, FL &amp; Serving Southwest Florida</p>
+          <p>🐝 Weddings, Baby Showers, Birthdays &amp; Milestones</p>
+          <div class="prayer-banner"><strong>🙏 Prayer Requests Welcomed</strong><p>Faith and genuine community are at the heart of what we do. If you have prayer requests for your family or upcoming marriage, we welcome you to share them.</p></div>
+        </div>
+        <div class="form-card">
+          <form onsubmit="handleInquiry(event)">
+            <div class="form-grid">
+              <div class="form-group"><label for="name">Your Name *</label><input id="name" required placeholder="First & Last Name"></div>
+              <div class="form-group"><label for="email">Email Address *</label><input id="email" type="email" required placeholder="you@example.com"></div>
+              <div class="form-group"><label for="phone">Phone Number</label><input id="phone" type="tel" placeholder="(555) 000-0000"></div>
+              <div class="form-group"><label for="date">Target Event Date</label><input id="date" type="date"></div>
+              <div class="form-group full"><label for="package">Package of Interest</label><select id="package"><option>Free Event Consultation</option><option>Wedding: All the Buzz ($3,000)</option><option>Wedding: Sweet Spot ($1,800)</option><option>Wedding: Honeycomb ($900)</option><option>Party: Sweet As Honey ($300)</option><option>Party: Worker Bee Setup ($75 - $120)</option><option>Add-On Services</option></select></div>
+              <div class="form-group full"><label for="notes">Tell Us About Your Vision</label><textarea id="notes" placeholder="Share event type, expected guest count, venue ideas, or prayer requests..."></textarea></div>
+              <div class="form-group full"><button class="btn btn-dark" type="submit">Send Event Inquiry</button></div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-wrap"><div><strong>Bee Joyful Events</strong> &bull; Joyful celebrations, thoughtfully planned.</div><div>&copy; <span id="year"></span> Bee Joyful Events. All rights reserved.</div></div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    function handleInquiry(event) {
+      event.preventDefault();
+      const name = document.getElementById('name').value || 'Friend';
+      const pkg = document.getElementById('package').value;
+      alert(`Thank you, ${name}! Your inquiry for "${pkg}" has been recorded. Connect this form to your email, Formspree, or Netlify Forms when publishing.`);
+      event.target.reset();
+    }
+  </script>
+</body>
+</html>
